@@ -13,10 +13,10 @@ interface TaskData {
 
 function App() {
     const [tasks, setTasks] = useState<TaskData[]>([]);
-    const API_URL = "http://127.0.0.1:8000/api/todos"; // Ensure this matches your Laravel route
+    const API_URL = "http://127.0.0.1:8000/api/todos";
 
     useEffect(() => {
-        fetch(API_URL, { mode: "cors" })  // This handles cross-origin requests
+        fetch(API_URL, { mode: "cors" })  
             .then((response) => response.json())
             .then((data) => setTasks(data))
             .catch((error) => console.error("Error fetching tasks:", error));
